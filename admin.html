@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin · Noor Accessories</title>
+<link rel="icon" href="assets/noor-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/rtl.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ============ LOGIN ============ -->
+<section class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-head">
+      <span class="brand-mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E74C7C"/><stop offset="100%" stop-color="#8B4D6D"/>
+          </linearGradient></defs>
+          <circle cx="24" cy="24" r="22" fill="url(#lg)"/>
+          <path d="M24 11c3.5 5 7 7.5 7 12a7 7 0 1 1-14 0c0-4.5 3.5-7 7-12z" fill="#FFF5F8"/>
+        </svg>
+      </span>
+      <h1 data-i18n="ad.login">Admin Login</h1>
+      <p data-i18n="ad.loginSub">Please sign in to manage your store</p>
+    </div>
+
+    <form id="loginForm" class="form-grid">
+      <div class="field field-full">
+        <label data-i18n="ad.username">Username</label>
+        <input name="user" autocomplete="username" required data-i18n-ph="ad.usernamePh">
+      </div>
+      <div class="field field-full">
+        <label data-i18n="ad.password">Password</label>
+        <input name="pass" type="password" autocomplete="current-password" required data-i18n-ph="ad.passwordPh">
+      </div>
+      <div class="field field-full">
+        <button class="btn btn-primary btn-block" type="submit" data-i18n="ad.signIn">Sign In</button>
+        <p class="login-err" id="loginErr"></p>
+      </div>
+    </form>
+
+    <div class="login-foot">
+      <button class="lang-btn" data-lang-toggle><span class="flag">🇵🇰</span><span>اردو</span></button>
+      <a href="index.html" class="btn btn-ghost btn-sm" data-i18n="ad.backToStore">Back to Store</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<div class="admin-shell hidden" id="adminShell">
+
+  <!-- top bar -->
+  <header class="admin-header">
+    <div class="ah-inner">
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E74C7C"/><stop offset="100%" stop-color="#8B4D6D"/>
+            </linearGradient></defs>
+            <circle cx="24" cy="24" r="22" fill="url(#ag)"/>
+            <path d="M24 11c3.5 5 7 7.5 7 12a7 7 0 1 1-14 0c0-4.5 3.5-7 7-12z" fill="#FFF5F8"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Noor</span>
+          <span class="brand-sub" data-i18n="ad.dashboard">Dashboard</span>
+        </span>
+      </a>
+
+      <span class="grow"></span>
+
+      <button class="lang-btn" data-lang-toggle><span class="flag">🇵🇰</span><span>اردو</span></button>
+      <button class="btn btn-ghost btn-sm" id="refreshBtn" data-i18n="ad.refresh">Refresh</button>
+      <a href="index.html" class="btn btn-outline btn-sm hide-sm" data-i18n="ad.backToStore">Back to Store</a>
+      <button class="btn btn-primary btn-sm" id="logoutBtn" data-i18n="ad.logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="admin-body-grid">
+
+    <!-- sidebar -->
+    <nav class="admin-nav" id="adminNav">
+      <button class="anav active" data-tab="overview">
+        <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3zm10 0h8v5h-8zM3 13h8v8H3zm10-3h8v11h-8z"/></svg>
+        <span data-i18n="ad.overview">Overview</span></button>
+      <button class="anav" data-tab="products">
+        <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7zm0 2.3 6.5 3.6L12 11.5 5.5 7.9zM5 9.6l6 3.3v6.5l-6-3.3zm14 0v6.5l-6 3.3V13z"/></svg>
+        <span data-i18n="ad.tabProducts">Products</span><b class="anav-count" id="cProducts">0</b></button>
+      <button class="anav" data-tab="banners">
+        <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zm2 2v10h14V7zm2 7 3-4 2.5 3.2L15 10l2 4z"/></svg>
+        <span data-i18n="ad.tabBanners">Carousel</span><b class="anav-count" id="cBanners">0</b></button>
+      <button class="anav" data-tab="orders">
+        <svg viewBox="0 0 24 24"><path d="M6 2h12l2 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm1.2 5h9.6l-1-2.5H8.2zM8 11v2h8v-2z"/></svg>
+        <span data-i18n="ad.tabOrders">Orders</span><b class="anav-count" id="cOrders">0</b></button>
+      <button class="anav" data-tab="customers">
+        <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.7-9 6v2h18v-2c0-3.3-4-6-9-6z"/></svg>
+        <span data-i18n="ad.tabCustomers">Customers</span><b class="anav-count" id="cCustomers">0</b></button>
+      <button class="anav" data-tab="reviews">
+        <svg viewBox="0 0 24 24"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>
+        <span data-i18n="ad.tabReviews">Reviews</span><b class="anav-count" id="cReviews">0</b></button>
+    </nav>
+
+    <main class="admin-main">
+      <div class="notice-bar hidden" id="demoBar" data-i18n="ad.demoNote">Demo mode</div>
+
+      <!-- ======== OVERVIEW ======== -->
+      <section class="panel active" data-panel="overview">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-ico">🛍️</div>
+            <div><b id="statProducts">0</b><span data-i18n="ad.totalProducts">Total Products</span></div></div>
+          <div class="stat-card"><div class="stat-ico">📦</div>
+            <div><b id="statOrders">0</b><span data-i18n="ad.totalOrders">Total Orders</span></div></div>
+          <div class="stat-card"><div class="stat-ico">👩</div>
+            <div><b id="statCustomers">0</b><span data-i18n="ad.totalCustomers">Total Customers</span></div></div>
+          <div class="stat-card"><div class="stat-ico">💰</div>
+            <div><b id="statRevenue">0</b><span data-i18n="ad.totalRevenue">Total Revenue</span></div></div>
+          <div class="stat-card"><div class="stat-ico">⭐</div>
+            <div><b id="statRating">0</b><span data-i18n="ad.avgRating">Average Rating</span></div></div>
+          <div class="stat-card"><div class="stat-ico">⏳</div>
+            <div><b id="statPending">0</b><span data-i18n="ad.pendingOrders">Pending Orders</span></div></div>
+        </div>
+
+        <div class="two-col">
+          <div class="board">
+            <div class="board-head">
+              <h3 data-i18n="ad.lastOrders">Latest orders</h3>
+              <button class="link-btn" data-goto="orders" data-i18n="ad.viewAll">View all</button>
+            </div>
+            <div id="recentOrders"></div>
+          </div>
+          <div class="board">
+            <div class="board-head">
+              <h3 data-i18n="ad.lowStockTitle">Running low</h3>
+              <button class="link-btn" data-goto="products" data-i18n="ad.viewAll">View all</button>
+            </div>
+            <div id="lowStock"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== PRODUCTS ======== -->
+      <section class="panel" data-panel="products">
+        <div class="panel-bar">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+            <input id="prodSearch" data-i18n-ph="ad.searchProducts" placeholder="Search products...">
+          </div>
+          <select id="prodCat" class="mini-select"></select>
+          <span class="grow"></span>
+          <button class="btn btn-outline btn-sm" id="pushSheetBtn" data-i18n="ad.pushSheet">Send catalogue to Sheet</button>
+          <button class="btn btn-outline btn-sm" data-export="products" data-i18n="ad.export">Export CSV</button>
+          <button class="btn btn-primary btn-sm" id="addProductBtn">+ <span data-i18n="ad.addProduct">Add Product</span></button>
+        </div>
+        <div class="prod-grid" id="productsGrid"></div>
+      </section>
+
+      <!-- ======== CAROUSEL ======== -->
+      <section class="panel" data-panel="banners">
+        <div class="panel-bar">
+          <p class="panel-note" data-i18n="ad.noBanners">Slides shown on the home page carousel</p>
+          <span class="grow"></span>
+          <button class="btn btn-primary btn-sm" id="addBannerBtn">+ <span data-i18n="ad.addBanner">Add Slide</span></button>
+        </div>
+        <div class="prod-grid" id="bannersGrid"></div>
+      </section>
+
+      <!-- ======== ORDERS ======== -->
+      <section class="panel" data-panel="orders">
+        <div class="panel-bar">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+            <input id="orderSearch" data-i18n-ph="ad.searchOrders" placeholder="Search orders...">
+          </div>
+          <select id="orderStatus" class="mini-select"></select>
+          <span class="grow"></span>
+          <button class="btn btn-outline btn-sm" data-export="orders" data-i18n="ad.export">Export CSV</button>
+        </div>
+        <div id="ordersList"></div>
+      </section>
+
+      <!-- ======== CUSTOMERS ======== -->
+      <section class="panel" data-panel="customers">
+        <div class="panel-bar">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+            <input id="custSearch" data-i18n-ph="ad.searchCustomers" placeholder="Search customers...">
+          </div>
+          <span class="grow"></span>
+          <button class="btn btn-outline btn-sm" data-export="customers" data-i18n="ad.export">Export CSV</button>
+        </div>
+        <div class="table-wrap"><table class="data-table" id="customersTable"></table></div>
+      </section>
+
+      <!-- ======== REVIEWS ======== -->
+      <section class="panel" data-panel="reviews">
+        <div class="panel-bar">
+          <span class="grow"></span>
+          <button class="btn btn-outline btn-sm" data-export="reviews" data-i18n="ad.export">Export CSV</button>
+        </div>
+        <div class="review-list" id="reviewsList"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- ============ PRODUCT FORM ============ -->
+<div class="modal" id="productFormModal" aria-hidden="true">
+  <div class="modal-box modal-lg">
+    <button class="icon-btn close-btn modal-close" data-close aria-label="Close">✕</button>
+    <h3 class="modal-title" id="pfTitle" data-i18n="ad.newProduct">New Product</h3>
+    <p class="modal-sub" id="pfHint"></p>
+
+    <div class="pf-layout">
+      <form id="productForm" class="form-grid pf-form">
+        <input type="hidden" name="id">
+
+        <div class="field field-full"><label data-i18n="ad.nameEn">Name (English)</label>
+          <input name="nameEn" required></div>
+        <div class="field field-full"><label data-i18n="ad.nameUr">Name (Urdu)</label>
+          <input name="nameUr" dir="rtl"></div>
+
+        <div class="field"><label data-i18n="prod.category">Category</label>
+          <input name="category" list="catList" required><datalist id="catList"></datalist></div>
+        <div class="field"><label data-i18n="ad.stock">Quantity</label>
+          <input name="stock" type="number" min="0" value="10"></div>
+
+        <div class="field"><label data-i18n="ad.price">Price</label>
+          <input name="price" type="number" min="0" required></div>
+        <div class="field"><label data-i18n="ad.originalPrice">Original Price</label>
+          <input name="original" type="number" min="0">
+          <small class="hint" id="discHint" data-i18n="ad.discountAuto">Discount is worked out for you</small></div>
+
+        <div class="field field-full"><label data-i18n="ad.imageUrl">Image URL</label>
+          <input name="image" placeholder="assets/products/ns01.jpg">
+          <small class="hint" data-i18n="ad.imageHint">Paste a link, or use assets/products/name.jpg</small></div>
+
+        <div class="field field-full"><label data-i18n="ad.descEn">Short Description (English)</label>
+          <textarea name="descEn" rows="2"></textarea></div>
+        <div class="field field-full"><label data-i18n="ad.descUr">Short Description (Urdu)</label>
+          <textarea name="descUr" rows="2" dir="rtl"></textarea></div>
+
+        <div class="field field-full modal-actions">
+          <button type="button" class="btn btn-ghost" data-close data-i18n="g.cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="pfSave" data-i18n="ad.saveProduct">Save Product</button>
+        </div>
+      </form>
+
+      <aside class="pf-preview">
+        <span class="pf-preview-label" data-i18n="ad.preview">Preview</span>
+        <div class="pcard pcard-preview">
+          <div class="pcard-media">
+            <img id="pvImg" alt="" src="assets/noor-logo.svg">
+            <span class="pcard-disc hidden" id="pvDisc">-0%</span>
+          </div>
+          <div class="pcard-body">
+            <span class="pcard-cat" id="pvCat">—</span>
+            <h4 class="pcard-name" id="pvName">—</h4>
+            <div class="pcard-price">
+              <b id="pvPrice">Rs. 0</b><s id="pvOrig"></s>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE FORM ============ -->
+<div class="modal" id="bannerFormModal" aria-hidden="true">
+  <div class="modal-box modal-lg">
+    <button class="icon-btn close-btn modal-close" data-close aria-label="Close">✕</button>
+    <h3 class="modal-title" id="bfTitle" data-i18n="ad.newBanner">New Slide</h3>
+    <p class="modal-sub" id="bfHint"></p>
+
+    <form id="bannerForm" class="form-grid">
+      <input type="hidden" name="id">
+
+      <div class="field field-full">
+        <label data-i18n="ad.slideType">Slide type</label>
+        <div class="pay-options two">
+          <label class="pay-opt"><input type="radio" name="type" value="image" checked>
+            <span class="pay-card"><b>🖼️</b><span data-i18n="ad.typeImage">Photo</span></span></label>
+          <label class="pay-opt"><input type="radio" name="type" value="video">
+            <span class="pay-card"><b>🎬</b><span data-i18n="ad.typeVideo">Video</span></span></label>
+        </div>
+      </div>
+
+      <div class="field"><label data-i18n="ad.slideTitleEn">Headline (English)</label>
+        <input name="titleEn" required></div>
+      <div class="field"><label data-i18n="ad.slideTitleUr">Headline (Urdu)</label>
+        <input name="titleUr" dir="rtl"></div>
+
+      <div class="field"><label data-i18n="ad.slideSubEn">Sub-line (English)</label>
+        <input name="subEn"></div>
+      <div class="field"><label data-i18n="ad.slideSubUr">Sub-line (Urdu)</label>
+        <input name="subUr" dir="rtl"></div>
+
+      <div class="field field-full"><label data-i18n="ad.mediaUrl">Photo or video link</label>
+        <input name="media" required placeholder="assets/products/ns02.jpg">
+        <small class="hint" data-i18n="ad.mediaHint">A photo path, an .mp4 link, or a YouTube link</small></div>
+
+      <div class="field field-full" id="posterField"><label data-i18n="ad.posterUrl">Video cover image</label>
+        <input name="poster" placeholder="assets/products/ns05.jpg"></div>
+
+      <div class="field"><label data-i18n="ad.btnEn">Button text (English)</label>
+        <input name="btnEn" placeholder="Shop Now"></div>
+      <div class="field"><label data-i18n="ad.btnUr">Button text (Urdu)</label>
+        <input name="btnUr" dir="rtl" placeholder="اب خریدیں"></div>
+
+      <div class="field"><label data-i18n="ad.linkUrl">Button goes to</label>
+        <input name="link" value="#products"></div>
+      <div class="field"><label data-i18n="ad.sortOrder">Position</label>
+        <input name="order" type="number" min="1" value="1"></div>
+
+      <div class="field field-full modal-actions">
+        <button type="button" class="btn btn-ghost" data-close data-i18n="g.cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="bfSave" data-i18n="g.save">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ CONFIRM ============ -->
+<div class="modal" id="confirmModal" aria-hidden="true">
+  <div class="modal-box modal-sm center">
+    <div class="confirm-ico">🗑️</div>
+    <h3 class="modal-title" id="confirmTitle" data-i18n="ad.confirmTitle">Delete this product?</h3>
+    <p class="muted small" id="confirmName"></p>
+    <p class="muted small" data-i18n="ad.confirmBody">This cannot be undone.</p>
+    <div class="modal-actions center-actions">
+      <button class="btn btn-ghost" data-close data-i18n="g.cancel">Cancel</button>
+      <button class="btn btn-danger" id="confirmYes" data-i18n="ad.yesDelete">Yes, delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="js/config.js"></script>
+<script src="js/languages.js"></script>
+<script src="js/language-manager.js"></script>
+<script src="js/sheets-api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

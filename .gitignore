@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Vercel
+.vercel/
+
+# Node (not used, but keeps the repo clean if you add tooling later)
+node_modules/
+npm-debug.log*

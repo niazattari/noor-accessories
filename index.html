@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Noor Accessories – premium jewellery, bags, watches and accessories for ladies. Delivered across Pakistan. نور ایکسیسریز">
+<meta name="theme-color" content="#E74C7C">
+<title>Noor Accessories | نور ایکسیسریز</title>
+
+<link rel="icon" href="assets/noor-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+<!-- ============ PAGE LOADER ============ -->
+<div id="pageLoader" class="page-loader">
+  <div class="loader-ring"></div>
+  <p class="loader-text" data-i18n="g.loading">Loading</p>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-item">✨ <span data-i18n="feat.deliveryDesc">All over Pakistan</span></span>
+      <span class="topbar-item topbar-hide-sm">🚚 <span data-i18n="feat.cod">Cash on Delivery</span></span>
+      <span class="topbar-item topbar-hide-sm">🕒 <span data-i18n="ft.hours">Open daily 10:00 AM – 10:00 PM</span></span>
+    </div>
+  </div>
+
+  <div class="container header-inner">
+
+    <!-- brand -->
+    <a href="#home" class="brand" aria-label="Noor Accessories">
+      <span class="brand-mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E74C7C"/><stop offset="100%" stop-color="#8B4D6D"/>
+          </linearGradient></defs>
+          <circle cx="24" cy="24" r="22" fill="url(#bg1)"/>
+          <path d="M24 11c3.5 5 7 7.5 7 12a7 7 0 1 1-14 0c0-4.5 3.5-7 7-12z" fill="#FFF5F8"/>
+          <circle cx="24" cy="33" r="2.6" fill="#D4AF37"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name" id="brandName">Noor</span>
+        <span class="brand-sub" id="brandSub">Accessories</span>
+      </span>
+    </a>
+
+    <!-- desktop nav -->
+    <nav class="main-nav" id="mainNav">
+      <a href="#home"     class="nav-link active" data-i18n="nav.home">Home</a>
+      <a href="#products" class="nav-link" data-i18n="nav.products">Products</a>
+      <a href="#reviews"  class="nav-link" data-i18n="nav.reviews">Reviews</a>
+      <a href="#about"    class="nav-link" data-i18n="nav.about">About</a>
+    </nav>
+
+    <!-- search -->
+    <div class="header-search">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+      <input type="search" id="searchInput" data-i18n-ph="nav.searchPh" placeholder="Search accessories..." autocomplete="off">
+    </div>
+
+    <!-- actions -->
+    <div class="header-actions">
+
+      <button class="icon-btn" id="themeBtn" data-i18n-title="nav.theme" title="Dark mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.3 0-.6-.05-.9A7 7 0 0 1 12.9 3.05 8.7 8.7 0 0 0 12 3z"/></svg>
+      </button>
+
+      <button class="lang-btn" id="langBtn" data-lang-toggle data-i18n-title="nav.menu">
+        <span class="flag">🇵🇰</span><span>اردو</span>
+      </button>
+
+      <button class="icon-btn" id="profileBtn" data-i18n-title="nav.profile" title="My Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.7-9 6v2h18v-2c0-3.3-4-6-9-6z"/></svg>
+      </button>
+
+      <button class="icon-btn cart-btn" id="cartBtn" data-i18n-title="nav.cart" title="Shopping Cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2H2v2h2l3 8h11l3-8H7.6L7 4zm2 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+
+      <a href="#" class="wa-btn" id="headerWa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.5 16.2L2 22l6-1.5A10 10 0 1 0 20 3.9zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-3.4.9.9-3.3-.2-.3A8 8 0 1 1 12 20zm4.5-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1s-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6a9.4 9.4 0 0 0 3.7 3.3c1.4.6 1.9.6 2.6.5.4 0 1.4-.5 1.6-1.1.2-.6.2-1.1.1-1.2 0 0-.2-.1-.4-.2z"/></svg>
+        <span data-i18n="nav.whatsapp">WhatsApp</span>
+      </a>
+
+      <button class="icon-btn menu-btn" id="menuBtn" data-i18n-title="nav.menu" title="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-search">
+      <input type="search" id="searchInputMobile" data-i18n-ph="nav.searchPh" placeholder="Search accessories...">
+    </div>
+    <a href="#home"     class="mnav-link" data-i18n="nav.home">Home</a>
+    <a href="#products" class="mnav-link" data-i18n="nav.products">Products</a>
+    <a href="#reviews"  class="mnav-link" data-i18n="nav.reviews">Reviews</a>
+    <a href="#about"    class="mnav-link" data-i18n="nav.about">About</a>
+    <a href="admin.html" class="mnav-link" data-i18n="nav.admin">Admin</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <span class="hero-badge" data-i18n="hero.badge">New Collection 2026</span>
+      <h1 class="hero-title" id="heroTitle">Noor Accessories</h1>
+      <p class="hero-tagline" id="heroTagline">Premium accessories for every beautiful moment</p>
+      <p class="hero-sub" data-i18n="hero.sub">Jewellery, bags, watches and more.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary btn-lg" data-i18n="hero.shopNow">Shop Now</a>
+        <a href="#" class="btn btn-whatsapp btn-lg" id="heroWa" target="_blank" rel="noopener" data-i18n="hero.chat">Chat on WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><strong>1,200+</strong><span data-i18n="hero.stat1">Happy Customers</span></div>
+        <div class="hstat"><strong id="heroProductCount">50+</strong><span data-i18n="hero.stat2">Products</span></div>
+        <div class="hstat"><strong id="heroDays">3</strong><span data-i18n="hero.stat3">Day Delivery</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art reveal">
+      <div class="hero-card hero-card-1"></div>
+      <div class="hero-card hero-card-2"></div>
+      <div class="hero-card hero-card-3"></div>
+      <div class="hero-sparkle s1">✦</div>
+      <div class="hero-sparkle s2">✧</div>
+      <div class="hero-sparkle s3">✦</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMO CAROUSEL ============ -->
+<section class="promo" id="promo">
+  <div class="container">
+    <div class="carousel" id="carousel">
+      <div class="car-track" id="carTrack"></div>
+
+      <button class="car-arrow prev" id="carPrev" data-i18n-title="car.prev">
+        <svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg>
+      </button>
+      <button class="car-arrow next" id="carNext" data-i18n-title="car.next">
+        <svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg>
+      </button>
+
+      <div class="car-dots" id="carDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features">
+  <div class="container features-grid">
+    <div class="feature reveal"><div class="feature-ico">🚚</div><h4 data-i18n="feat.delivery">Fast Delivery</h4><p data-i18n="feat.deliveryDesc">All over Pakistan</p></div>
+    <div class="feature reveal"><div class="feature-ico">💵</div><h4 data-i18n="feat.cod">Cash on Delivery</h4><p data-i18n="feat.codDesc">Pay when you receive</p></div>
+    <div class="feature reveal"><div class="feature-ico">💎</div><h4 data-i18n="feat.quality">Premium Quality</h4><p data-i18n="feat.qualityDesc">Hand-picked items</p></div>
+    <div class="feature reveal"><div class="feature-ico">💬</div><h4 data-i18n="feat.support">WhatsApp Support</h4><p data-i18n="feat.supportDesc">We reply quickly</p></div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="prod.sectionSub">Find Your Perfect Accessory</span>
+      <h2 class="section-title" data-i18n="prod.sectionTitle">Our Collection</h2>
+      <div class="title-rule"><span></span>✦<span></span></div>
+    </div>
+
+    <div class="toolbar reveal">
+      <div class="chips" id="categoryChips"></div>
+      <div class="toolbar-right">
+        <label class="select-wrap">
+          <select id="sortSelect">
+            <option value="newest"  data-i18n-value="prod.sortNewest">Newest First</option>
+            <option value="lowhigh" data-i18n-value="prod.sortLowHigh">Price: Low to High</option>
+            <option value="highlow" data-i18n-value="prod.sortHighLow">Price: High to Low</option>
+            <option value="popular" data-i18n-value="prod.sortPopular">Most Popular</option>
+          </select>
+        </label>
+        <span class="result-count"><b id="resultCount">0</b> <span data-i18n="prod.results">products found</span></span>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+    <div class="empty-state hidden" id="productEmpty">
+      <div class="empty-ico">🌸</div>
+      <h3 data-i18n="prod.none">No products available</h3>
+      <p data-i18n="prod.noneSub">Please check back soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="rv.sub">Customer Reviews</span>
+      <h2 class="section-title" data-i18n="rv.title">What Our Customers Say</h2>
+      <div class="title-rule"><span></span>✦<span></span></div>
+      <p class="avg-rating"><span id="avgStars" class="stars">★★★★★</span>
+        <b id="avgValue">5.0</b> · <span data-i18n="rv.average">Average Rating</span></p>
+    </div>
+    <div class="review-grid" id="reviewGrid"></div>
+    <div class="center-cta">
+      <button class="btn btn-outline" id="writeReviewBtn" data-i18n="rv.write">Write a Review</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="about">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="brand footer-brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E74C7C"/><stop offset="100%" stop-color="#D4AF37"/>
+            </linearGradient></defs>
+            <circle cx="24" cy="24" r="22" fill="url(#bg2)"/>
+            <path d="M24 11c3.5 5 7 7.5 7 12a7 7 0 1 1-14 0c0-4.5 3.5-7 7-12z" fill="#FFF5F8"/>
+          </svg>
+        </span>
+        <span class="brand-text"><span class="brand-name" id="footBrand">Noor</span><span class="brand-sub" data-i18n="nav.products">Accessories</span></span>
+      </div>
+      <h4 data-i18n="ft.about">About Noor Accessories</h4>
+      <p data-i18n="ft.aboutText">Premium quality accessories for ladies.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="ft.links">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home"     data-i18n="nav.home">Home</a></li>
+        <li><a href="#products" data-i18n="nav.products">Products</a></li>
+        <li><a href="#reviews"  data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="#" id="footProfile" data-i18n="nav.profile">My Profile</a></li>
+        <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="ft.contact">Contact Us</h4>
+      <p class="wa-only">💬 <span data-i18n="ft.whatsappOnly">WhatsApp Only</span></p>
+      <p class="wa-number" id="footWaNumber">+92 300 0000000</p>
+      <a href="#" class="btn btn-whatsapp" id="footerWa" target="_blank" rel="noopener" data-i18n="ft.chat">Chat on WhatsApp</a>
+      <p class="hours" data-i18n="ft.hours">Open daily 10:00 AM – 10:00 PM</p>
+      <p class="ad-email"><span data-i18n="ft.adEnquiries">For advertising &amp; bulk orders</span>:
+        <a href="mailto:niazattari2641@gmail.com" id="footAdEmail">niazattari2641@gmail.com</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="ft.follow">Follow Us</h4>
+      <div class="social">
+        <a href="#" id="soIg" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-3.2a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a>
+        <a href="#" id="soFb" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M13 22v-8h3l.5-3H13V9c0-.9.3-1.5 1.6-1.5H17V4.8A22 22 0 0 0 14.6 4C12.2 4 10.5 5.5 10.5 8.3V11H8v3h2.5v8H13z"/></svg></a>
+        <a href="#" id="soTt" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M16 3c.4 2.3 1.9 3.8 4 4.1v3a7 7 0 0 1-4-1.3v6.4A6.2 6.2 0 1 1 9.8 9v3.1a3.1 3.1 0 1 0 3.1 3.1V3H16z"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© <span id="year">2026</span> <span id="copyBrand">Noor Accessories</span> · <span data-i18n="ft.rights">All rights reserved</span></p>
+      <p class="bilingual">نور ایکسیسریز — تمام حقوق محفوظ ہیں</p>
+    </div>
+  </div>
+</footer>
+
+<!-- floating whatsapp -->
+<a href="#" class="wa-float" id="floatWa" target="_blank" rel="noopener" data-i18n-title="ft.chat">
+  <svg viewBox="0 0 24 24"><path d="M20 3.9A10 10 0 0 0 3.5 16.2L2 22l6-1.5A10 10 0 1 0 20 3.9zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-3.4.9.9-3.3-.2-.3A8 8 0 1 1 12 20zm4.5-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1s-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6a9.4 9.4 0 0 0 3.7 3.3c1.4.6 1.9.6 2.6.5.4 0 1.4-.5 1.6-1.1.2-.6.2-1.1.1-1.2 0 0-.2-.1-.4-.2z"/></svg>
+</a>
+
+<!-- ============ OVERLAY ============ -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ============ CART DRAWER ============ -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3 data-i18n="cart.title">Shopping Cart</h3>
+    <button class="icon-btn close-btn" id="cartClose" data-i18n-title="g.close">✕</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="sum-row"><span data-i18n="cart.subtotal">Subtotal</span><b id="sumSubtotal">Rs. 0</b></div>
+    <div class="sum-row discount"><span data-i18n="cart.discount">Discount</span><b id="sumDiscount">Rs. 0</b></div>
+    <div class="sum-row"><span data-i18n="cart.shipping">Shipping</span><b id="sumShipping">Rs. 0</b></div>
+    <div class="sum-row total"><span data-i18n="cart.total">Total</span><b id="sumTotal">Rs. 0</b></div>
+    <button class="btn btn-primary btn-block" id="checkoutBtn" data-i18n="cart.checkout">Proceed to Checkout</button>
+    <button class="btn btn-ghost btn-block" id="clearCartBtn" data-i18n="cart.clear">Clear Cart</button>
+  </div>
+</aside>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div class="modal" id="productModal" aria-hidden="true">
+  <div class="modal-box modal-product">
+    <button class="icon-btn close-btn modal-close" data-close data-i18n-title="g.close">✕</button>
+    <div id="productModalBody"></div>
+  </div>
+</div>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal" id="checkoutModal" aria-hidden="true">
+  <div class="modal-box modal-lg">
+    <button class="icon-btn close-btn modal-close" data-close data-i18n-title="g.close">✕</button>
+    <h3 class="modal-title" data-i18n="co.title">Checkout</h3>
+    <p class="modal-sub" data-i18n="co.subtitle">Please fill in your delivery details</p>
+
+    <form id="checkoutForm" class="form-grid" novalidate>
+      <div class="field">
+        <label data-i18n="co.name">Full Name</label>
+        <input name="name" required data-i18n-ph="co.namePh">
+        <small class="err"></small>
+      </div>
+      <div class="field">
+        <label data-i18n="co.phone">Phone Number</label>
+        <input name="phone" required inputmode="tel" data-i18n-ph="co.phonePh">
+        <small class="err"></small>
+      </div>
+      <div class="field">
+        <label data-i18n="co.email">Email Address</label>
+        <input name="email" type="email" data-i18n-ph="co.emailPh">
+        <small class="err"></small>
+      </div>
+      <div class="field">
+        <label data-i18n="co.city">City</label>
+        <input name="city" required data-i18n-ph="co.cityPh">
+        <small class="err"></small>
+      </div>
+      <div class="field field-full">
+        <label data-i18n="co.address">Delivery Address</label>
+        <textarea name="address" rows="2" required data-i18n-ph="co.addressPh"></textarea>
+        <small class="err"></small>
+      </div>
+      <div class="field field-full">
+        <label data-i18n="co.notes">Order Notes</label>
+        <textarea name="notes" rows="2" data-i18n-ph="co.notesPh"></textarea>
+      </div>
+
+      <div class="field field-full">
+        <label data-i18n="co.payment">Payment Method</label>
+        <div class="pay-options">
+          <label class="pay-opt"><input type="radio" name="payment" value="COD" checked>
+            <span class="pay-card"><b>💵</b><span data-i18n="co.cod">Cash on Delivery</span></span></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="JazzCash">
+            <span class="pay-card"><b>📱</b><span data-i18n="co.jazzcash">JazzCash</span></span></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="Easypaisa">
+            <span class="pay-card"><b>💳</b><span data-i18n="co.easypaisa">Easypaisa</span></span></label>
+        </div>
+        <div class="pay-info" id="payInfo"></div>
+      </div>
+
+      <div class="field field-full order-summary">
+        <h4 data-i18n="co.summary">Order Summary</h4>
+        <div id="checkoutSummary"></div>
+      </div>
+
+      <div class="field field-full modal-actions">
+        <button type="button" class="btn btn-ghost" data-close data-i18n="co.back">Back to Cart</button>
+        <button type="submit" class="btn btn-primary" id="placeOrderBtn" data-i18n="co.place">Place Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ ORDER CONFIRMATION ============ -->
+<div class="modal" id="successModal" aria-hidden="true">
+  <div class="modal-box modal-sm center">
+    <div class="success-tick">✓</div>
+    <h3 class="modal-title" data-i18n="oc.thanks">Thank you for your order!</h3>
+    <p class="order-id"><span data-i18n="oc.orderId">Order ID</span>: <b id="orderIdOut">—</b></p>
+    <p class="muted"><span data-i18n="oc.deliverIn">Will be delivered in</span>
+       <b id="deliveryDaysOut">3</b> <span data-i18n="oc.days">days</span></p>
+    <p class="muted small" data-i18n="oc.saved">Your order has been saved.</p>
+    <a class="btn btn-whatsapp btn-block" id="orderWaBtn" target="_blank" rel="noopener" data-i18n="oc.whatsapp">Send Order on WhatsApp</a>
+    <button class="btn btn-ghost btn-block" data-close data-i18n="oc.done">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ============ PROFILE MODAL ============ -->
+<div class="modal" id="profileModal" aria-hidden="true">
+  <div class="modal-box modal-lg">
+    <button class="icon-btn close-btn modal-close" data-close data-i18n-title="g.close">✕</button>
+    <h3 class="modal-title" data-i18n="pf.title">My Profile</h3>
+
+    <div class="tabs" id="profileTabs">
+      <button class="tab active" data-tab="info"     data-i18n="pf.tabInfo">Profile Info</button>
+      <button class="tab"        data-tab="orders"   data-i18n="pf.tabOrders">My Orders</button>
+      <button class="tab"        data-tab="reviews"  data-i18n="pf.tabReviews">Remarks &amp; Reviews</button>
+      <button class="tab"        data-tab="wishlist" data-i18n="pf.tabWishlist">Wishlist</button>
+    </div>
+
+    <!-- info -->
+    <div class="tab-panel active" data-panel="info">
+      <form id="profileForm" class="form-grid">
+        <div class="field"><label data-i18n="pf.name">Full Name</label><input name="name" data-i18n-ph="co.namePh"></div>
+        <div class="field"><label data-i18n="pf.phone">Phone Number</label><input name="phone" data-i18n-ph="co.phonePh"></div>
+        <div class="field"><label data-i18n="pf.email">Email Address</label><input name="email" type="email" data-i18n-ph="co.emailPh"></div>
+        <div class="field"><label data-i18n="pf.city">City</label><input name="city" data-i18n-ph="co.cityPh"></div>
+        <div class="field field-full"><label data-i18n="pf.address">Delivery Address</label><textarea name="address" rows="2" data-i18n-ph="co.addressPh"></textarea></div>
+        <div class="field field-full">
+          <label data-i18n="pf.language">Preferred Language</label>
+          <div class="lang-radio">
+            <label><input type="radio" name="lang" value="en"> 🇬🇧 English</label>
+            <label><input type="radio" name="lang" value="ur"> 🇵🇰 اردو</label>
+          </div>
+        </div>
+        <div class="field field-full modal-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="pf.save">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- orders -->
+    <div class="tab-panel" data-panel="orders">
+      <div class="panel-actions">
+        <button class="btn btn-outline btn-sm" id="refreshOrders" data-i18n="pf.loadOrders">Refresh from store</button>
+      </div>
+      <div id="ordersList"></div>
+    </div>
+
+    <!-- reviews -->
+    <div class="tab-panel" data-panel="reviews">
+      <form id="reviewForm" class="form-grid">
+        <div class="field field-full">
+          <label data-i18n="pf.rating">Rating</label>
+          <div class="star-picker" id="starPicker">
+            <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+          </div>
+        </div>
+        <div class="field field-full">
+          <label data-i18n="pf.yourRemarks">Your Remarks / Feedback</label>
+          <textarea name="text" rows="4" required data-i18n-ph="pf.remarksPh"></textarea>
+        </div>
+        <div class="field field-full modal-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="pf.submit">Submit Feedback</button>
+        </div>
+      </form>
+      <div id="myReviews"></div>
+    </div>
+
+    <!-- wishlist -->
+    <div class="tab-panel" data-panel="wishlist">
+      <div id="wishlistList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- toasts -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="js/config.js"></script>
+<script src="js/languages.js"></script>
+<script src="js/language-manager.js"></script>
+<script src="js/sheets-api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* ===========================================================
+   Noor Accessories – Responsive rules
+   Desktop 1200px+ | Tablet 768–1199 | Mobile 320–767
+   =========================================================== */
+
+/* ---------- Large tablet / small desktop ---------- */
+@media (max-width:1199px){
+  .header-search{max-width:220px}
+  .main-nav{margin-inline-start:.3rem}
+  .nav-link{padding:.5rem .6rem;font-size:.92rem}
+  .hero-inner{gap:2rem}
+  .hero-art{height:330px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width:991px){
+  .main-nav{display:none}
+  .menu-btn{display:grid}
+  .mobile-nav{display:flex}
+  .header-search{display:none}
+  .wa-btn span{display:none}
+  .wa-btn{padding:.55rem;width:42px;height:42px;justify-content:center;border-radius:50%}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-inline:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-art{height:300px;max-width:460px;margin-inline:auto}
+  .pm-grid{grid-template-columns:1fr}
+  .pm-media{aspect-ratio:16/10}
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:767px){
+  body{font-size:15px}
+  .container{width:min(1240px,100% - 1.6rem)}
+  .topbar-hide-sm{display:none}
+  .topbar-inner{gap:1rem;font-size:.74rem}
+
+  .header-inner{min-height:64px;gap:.3rem}
+  .header-actions{gap:.15rem}
+  .brand-mark svg{width:36px;height:36px}
+  .brand-name{font-size:1.15rem}
+  .brand-sub{font-size:.6rem;letter-spacing:.16em}
+  .icon-btn{width:38px;height:38px}
+  .icon-btn svg{width:20px;height:20px}
+  .lang-btn{padding:.38rem .6rem;font-size:.78rem}
+  #themeBtn{display:none}
+
+  .hero{padding:2.6rem 0 3.2rem}
+  .hero-title{font-size:2.2rem}
+  .hero-actions .btn{flex:1;min-width:150px}
+  .hero-stats{gap:1.4rem}
+  .hstat strong{font-size:1.35rem}
+  .hero-art{height:230px}
+
+  .section{padding:3rem 0}
+  .section-head{margin-bottom:1.8rem}
+
+  .toolbar{flex-direction:column;align-items:stretch;gap:.8rem}
+  .chips{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.3rem;-webkit-overflow-scrolling:touch;width:100%;min-width:0}
+  .chip{flex:0 0 auto}
+  .toolbar-right{justify-content:space-between;width:100%;min-width:0}
+
+  /* 2 columns of products on phones */
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:.9rem}
+  .card-body{padding:.75rem .8rem 1rem;gap:.22rem}
+  .card-name{font-size:.9rem}
+  .card-desc{display:none}
+  .price-now{font-size:1rem}
+  .price-old{font-size:.76rem}
+  .card-actions{flex-direction:column;gap:.4rem}
+  .card-actions .btn{padding:.55rem .5rem;font-size:.8rem}
+  .badge-disc{font-size:.66rem;padding:.2rem .5rem}
+  .wish-btn{opacity:1;transform:none;width:32px;height:32px}
+
+  .review-grid{grid-template-columns:1fr}
+
+  /* full-width sheets on mobile */
+  .cart-drawer{width:100%}
+  .modal{padding:0;place-items:end center}
+  .modal-box{
+    width:100%;max-width:100%;max-height:94dvh;
+    border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:1.5rem 1.2rem 2rem;
+  }
+  .form-grid{grid-template-columns:1fr}
+  .pay-options{grid-template-columns:1fr}
+  .pay-card{flex-direction:row;justify-content:flex-start;gap:.7rem;padding:.7rem 1rem}
+  .pay-card b{font-size:1.2rem}
+  .modal-actions{flex-direction:column-reverse}
+  .modal-actions .btn{width:100%}
+
+  .footer-grid{grid-template-columns:1fr;gap:1.6rem;text-align:center}
+  .footer-col h4::after{inset-inline-start:50%;transform:translateX(-50%)}
+  .footer-links{align-items:center}
+  .social{justify-content:center}
+  .footer-brand{justify-content:center}
+
+  .wa-float{width:50px;height:50px;bottom:16px;inset-inline-end:16px}
+  .wa-float svg{width:25px;height:25px}
+  .toast-wrap{inset-inline:16px;bottom:78px}
+  .toast{max-width:100%}
+}
+
+/* ---------- Small phones: keep only the floating WhatsApp ---------- */
+@media (max-width:480px){
+  #headerWa{display:none}
+  .lang-btn span:not(.flag){display:none}
+  .lang-btn{padding:.38rem .55rem}
+  .mobile-nav .mnav-link,
+  .mobile-search{max-width:100%}
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width:380px){
+  .product-grid{grid-template-columns:1fr}
+  .hero-title{font-size:1.9rem}
+  .brand-sub{display:none}
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- Print ---------- */
+@media print{
+  .site-header,.wa-float,.overlay,.cart-drawer,.modal,.site-footer,.toolbar{display:none !important}
+  body{background:#fff}
+}

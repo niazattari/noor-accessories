@@ -1,0 +1,69 @@
+/* ===========================================================
+   Noor Accessories – RTL (Urdu) overrides
+   Most of the layout already uses logical properties
+   (inset-inline-*, margin-inline-*, padding-inline-*), so this
+   file only fixes what cannot be expressed logically.
+   =========================================================== */
+
+html[dir="rtl"] body{ text-align:right; }
+
+/* header search icon sits on the right in RTL */
+html[dir="rtl"] .header-search input{ padding:.6rem 2.6rem .6rem 1rem; }
+html[dir="rtl"] .search-icon{ left:auto; right:.85rem; }
+
+/* nav underline animation stays centred – no change needed */
+
+/* select arrow + padding */
+html[dir="rtl"] .select-wrap select{ padding:.5rem 1rem .5rem 2rem; }
+
+/* line-through prices and phone numbers must stay LTR */
+html[dir="rtl"] .price-old,
+html[dir="rtl"] .wa-number,
+html[dir="rtl"] .order-code,
+html[dir="rtl"] .order-id b,
+html[dir="rtl"] .pay-info b,
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[name="phone"],
+html[dir="rtl"] input[name="email"],
+html[dir="rtl"] input[type="email"]{
+  direction:ltr;
+  unicode-bidi:embed;
+}
+html[dir="rtl"] input[name="phone"],
+html[dir="rtl"] input[type="email"]{ text-align:right; }
+
+/* quotation mark decoration flips */
+html[dir="rtl"] .review-card::before{ right:auto; left:1rem; }
+
+/* drawer slides in from the left in RTL */
+html[dir="rtl"] .cart-drawer{ right:auto; left:0; }
+
+/* footer heading underline */
+html[dir="rtl"] .footer-col h4::after{ left:auto; right:0; }
+@media (max-width:767px){
+  html[dir="rtl"] .footer-col h4::after{ right:50%; left:auto; transform:translateX(50%); }
+}
+html[dir="rtl"] .footer-links a:hover{ padding-inline-start:0; padding-inline-end:6px; }
+
+/* modal actions align */
+html[dir="rtl"] .modal-actions{ justify-content:flex-start; }
+html[dir="rtl"] .panel-actions{ justify-content:flex-start; }
+
+/* star picker reads right-to-left naturally – force LTR so 1..5 stays intuitive */
+html[dir="rtl"] .star-picker{ direction:ltr; justify-content:flex-end; }
+
+/* numbers inside summaries stay readable */
+html[dir="rtl"] .sum-row b,
+html[dir="rtl"] .osum-row b,
+html[dir="rtl"] .price-now,
+html[dir="rtl"] .hstat strong{ unicode-bidi:plaintext; }
+
+/* larger line height for Nastaliq */
+html[dir="rtl"] .card-name{ line-height:1.9; }
+html[dir="rtl"] .btn{ line-height:1.9; }
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .chip,
+html[dir="rtl"] .tab{ line-height:1.9; }
+
+/* toast slides from the right edge in RTL (inset-inline handles side) */
+html[dir="rtl"] .toast{ border-inline-start:4px solid var(--pink); }
